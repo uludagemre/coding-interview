@@ -9,8 +9,10 @@ true since 10 + 7 is 17.
 Bonus: Can you do this in one pass?
 '''
 def is_sum_up(arr: list, k: int) -> bool:
-    arr = str2arr(arr)
-    k = int(k)
+    if isinstance(arr, str):
+        arr = str2arr(arr)
+    if isinstance(k, str):
+        k = int(k)
 
     cache = []
     for i in arr:

@@ -1,3 +1,6 @@
+from .utils import *
+
+
 '''
 Given an array of integers, return a new array such that each element at index i
 of the new array is the product of all the numbers in the original array except 
@@ -9,14 +12,16 @@ be [2, 3, 6].
 
 Follow-up: what if you can't use division?
 '''
-def all_product(arr):
+def all_product(arr: list) -> list:
+    arr = str2arr(arr)
+
     accum = 1
-    res = []
+    ret = []
     for x in arr:
-        res.append(accum)
-        for i in range(len(res) - 1):
-            res[i] *= x
+        ret.append(accum)
+        for i in range(len(ret) - 1):
+            ret[i] *= x
         
         accum *= x
 
-    return res
+    return ret

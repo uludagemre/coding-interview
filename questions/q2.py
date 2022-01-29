@@ -12,8 +12,9 @@ be [2, 3, 6].
 
 Follow-up: what if you can't use division?
 '''
-def all_product(arr: list) -> list:
-    arr = str2arr(arr)
+def all_product(arr: str) -> list:
+    if isinstance(arr, str):
+        arr = str2arr(arr)
 
     accum = 1
     ret = []

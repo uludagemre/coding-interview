@@ -14,7 +14,7 @@ You can modify the input array in-place.
 """
 def find_missing(arr: list) -> int:
     if isinstance(arr, str):
-        arr = str2arr(arr, int)
+        arr = str2list(arr, int)
 
     arr_len = len(arr)
     

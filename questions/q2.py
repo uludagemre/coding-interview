@@ -1,5 +1,5 @@
 from .utils import *
-
+from functools import reduce
 
 '''
 Given an array of integers, return a new array such that each element at index i
@@ -12,17 +12,10 @@ be [2, 3, 6].
 
 Follow-up: what if you can't use division?
 '''
-def all_product(arr: str) -> list:
+
+
+def all_product(arr: list) -> list:
     if isinstance(arr, str):
-        arr = str2arr(arr)
+        arr = str2list(arr)
 
-    accum = 1
-    ret = []
-    for x in arr:
-        ret.append(accum)
-        for i in range(len(ret) - 1):
-            ret[i] *= x
-        
-        accum *= x
-
-    return ret
+    return [reduce((lambda x, y: x * y), arr[:i] + arr[i + 1:]) for i in range(len(arr))]

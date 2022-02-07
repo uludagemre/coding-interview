@@ -1,6 +1,5 @@
 from .utils import *
 
-
 """
 Given an array of integers, find the first missing positive integer in linear 
 time and constant space. In other words, find the lowest positive integer that 
@@ -12,12 +11,14 @@ give 3.
 
 You can modify the input array in-place.
 """
+
+
 def find_missing(arr: list) -> int:
     if isinstance(arr, str):
         arr = str2list(arr, int)
 
     arr_len = len(arr)
-    
+
     for i, x in enumerate(arr):
         if x <= 0 or x > arr_len:
             arr[i] = 1
